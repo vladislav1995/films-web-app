@@ -1,0 +1,13 @@
+type Film @key(fields: "id") {
+    id: ID!
+    name: String!
+}
+
+type Query @extends {
+    getFilmsByName(filmName: String): [Film]
+    getFilmById(id: ID!): Film
+}
+
+type Mutation @extends {
+    putFilm(name: String!): String
+}
